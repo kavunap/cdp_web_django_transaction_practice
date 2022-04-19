@@ -1,9 +1,14 @@
 from django.db import models
 
+class Car(models.Model):
+    available = models.BooleanField(default=True)
+
+    def __str__(self):
+        return str(self.available)
 
 class Room(models.Model):
     number = models.IntegerField(default=None, null=False)
-    available = models.BooleanField()
+    available = models.BooleanField(default=True)
     # user = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE, related_name='books', blank=False)
     # variations = models.OneToManyField(Variation)
 
