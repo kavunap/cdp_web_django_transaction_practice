@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>Hotel App</title>
+</head>
+
+<body>
+    <h1>New Guest</h1>
+    <form action="{% url 'create_guest' room.id %}" method="post">
+        {% csrf_token %} {{ form.as_p }}
+        <input type="submit" value="Create Guest">
+    </form>
+
+    <br>
+
+    <a href="{% url 'index' %}">Back</a>
+</body>
+
+</html>

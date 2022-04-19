@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>Hotel reservation</title>
+</head>
+
+<body>
+    <h1>New Room</h1>
+    <form action="{% url 'create' %}" method="post">
+        {% csrf_token %} {{ form.as_p }}
+        <input type="submit" value="Create Room">
+    </form>
+
+    <br>
+
+    <a href="{% url 'index' %}">Back</a>
+</body>
+
+</html>

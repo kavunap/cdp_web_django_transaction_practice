@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>Hotel App</title>
+</head>
+
+<body>
+    <p>
+        <strong>number:</strong> {{ room.number }}
+    </p>
+
+    <p>
+        <strong>Available:</strong> {{ room.available }}
+    </p>
+
+    <p>
+        <form action="{% url 'create_guest' %}" method="post">
+            {% csrf_token %}
+            <label for="your_name">Your name: </label>
+            <input type="text" name="name"><br>
+            <label for="your_name">Your email: </label>
+            <input id="your_name" type="text" name="email"><br>
+            <input type="submit" value="Reserve">
+            <input type="hidden" name="room_id" value={{ room.id }}>
+        </form>
+    </p>
+    <a href="{% url 'index' %} ">Back</a> |
+    <!-- | （パイプライン）を追記 -->
+    <!-- 追記 -->
+</body>
+
+</html>
